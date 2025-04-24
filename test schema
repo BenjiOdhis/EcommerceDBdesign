@@ -1,0 +1,60 @@
+-- Brands
+INSERT INTO brand (name, description) VALUES 
+('Redbat', 'Sportswear brand'),
+('Redmi', 'Technology company');
+
+-- Product Categories
+INSERT INTO product_category (name, description) VALUES 
+('Clothing', 'Wearable items'),
+('Electronics', 'Tech gadgets');
+
+-- Colors
+INSERT INTO color (name, hex_code) VALUES 
+('Red', '#FF0000'),
+('Black', '#000000');
+
+-- Size Categories
+INSERT INTO size_category (name) VALUES 
+('Clothing Size'),
+('Shoe Size');
+
+-- Size Options
+INSERT INTO size_option (size_cat_id, value, display_name) VALUES 
+(1, 'S', 'Small'),
+(1, 'M', 'Medium'),
+(2, '42', 'Size 42');
+
+-- Attribute Categories
+INSERT INTO attribute_category (name, description) VALUES 
+('Physical', 'Physical features'),
+('Technical', 'Technical specs');
+
+-- Attribute Types
+INSERT INTO attribute_type (name, data_type) VALUES 
+('Material', 'text'),
+('Weight', 'number');
+
+-- Products
+INSERT INTO product (brand_id, category_id, name, description, base_price) VALUES 
+(1, 1, 'Redbat T-Shirt', 'Comfortable cotton T-shirt', 29.99),
+(2, 2, 'Redmi Note 13', 'Latest Redmi model', 999.00);
+
+-- Product Images
+INSERT INTO product_image (product_id, image_url) VALUES 
+(1, https://images.app.goo.gl/36KFfrz3iKyxrHEB9''),
+(2, 'https://www.gsmarena.com/xiaomi_redmi_note_12-12063.php');
+
+-- Product Items (SKUs)
+INSERT INTO product_item (product_id, sku, price, stock_qty) VALUES 
+(1, 'Redbat-TSHIRT-S', 29.99, 50),
+(2, 'Redmi-BLK', 999.00, 20);
+
+-- Product Variations
+INSERT INTO product_variation (item_id, color_id, size_id) VALUES 
+(1, 1, 1), -- Red, Small T-shirt
+(2, 2, NULL); -- Black redbat (no size)
+
+-- Product Attributes
+INSERT INTO product_attribute (product_id, attr_cat_id, type_id, name, value) VALUES 
+(1, 1, 1, 'Material', '100% Cotton'),
+(2, 2, 2, 'Weight', '174');
